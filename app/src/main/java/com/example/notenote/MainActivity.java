@@ -55,17 +55,14 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnNot
         refreshListView(); // 刷新笔记列表
         lv.setAdapter(adapter); // 将适配器与列表视图关联，从而显示笔记列表中的数据在界面上
 
-        DraggableFloatingButton draggableFloatingButton = new DraggableFloatingButton(this);
         CoordinatorLayout.LayoutParams params = new CoordinatorLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
         params.gravity = Gravity.BOTTOM | Gravity.END;
         params.setMargins(16, 16, 16, 16);
-        draggableFloatingButton.setLayoutParams(params);
 
         RelativeLayout relativeLayout = findViewById(R.id.relateLayout); // 根据你的布局结构获取 CoordinatorLayout 实例
-        relativeLayout.addView(draggableFloatingButton);
 
 
         searchView = findViewById(R.id.searchView); // 搜索视图 用于在应用程序中提供搜索功能
